@@ -1,85 +1,68 @@
-<div align="center">
-
-![DEVKiTZ](https://img.shields.io/badge/DEVKiTZ-Module-ff6d5a?style=for-the-badge)
-![Version](https://img.shields.io/badge/v1.0-ffb800?style=flat-square)
-![License](https://img.shields.io/badge/License-MIT-ff6d5a?style=flat-square)
-![Status](https://img.shields.io/badge/Status-Active-00ff88?style=flat-square)
+![Module](https://img.shields.io/badge/DEVKiTZ-Module-ff6d5a?style=for-the-badge&labelColor=ffb800)
+![Version](https://img.shields.io/badge/version-v1.0.0-ff6d5a?style=flat-square&labelColor=0d0d14)
+![License](https://img.shields.io/badge/license-MIT-00ff88?style=flat-square&labelColor=0d0d14)
+![Status](https://img.shields.io/badge/status-active-00ff88?style=flat-square&labelColor=0d0d14)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![Drawflow](https://img.shields.io/badge/Drawflow-Node_Editor-06b6d4?style=flat-square)
 
-# n8n Viewer
+# n8n Workflow Viewer
 
-**Visual n8n Workflow Viewer for DEVKiTZ Ecosystem**
-
-</div>
+> **Visual Workflow Editor with Drawflow** - Part of the [DEVKiTZ](https://github.com/D-VKITZ) Ecosystem
 
 ---
 
 ## Preview
 
 ```
-+--------------------------------------------------------------+
-|  n8n Viewer -- Workflow Visualizer                     [x]   |
-|--------------------------------------------------------------|
-|  Templates: 3815   [Tags v]   [Search]: __________  [Go]     |
-|--------------------------------------------------------------|
-|                                                              |
-|  +----------+     +----------+     +----------+              |
-|  | Trigger  |---->| HTTP Req |---->| IF Node  |              |
-|  | Webhook  |     | GET /api |     | status=  |              |
-|  +----------+     +----------+     +----+-----+              |
-|                                    yes/ \no                  |
-|                              +--------+ +--------+           |
-|                              | Slack  | | Email  |           |
-|                              | Notify | | Alert  |           |
-|                              +--------+ +--------+           |
-+--------------------------------------------------------------+
++----------------------------------------------+
+|  n8n Viewer          Search   Import Export   |
++----------+-----------------------------------+
+| Templates|                                   |
+| 3,815+   |  +------+    +------+   +------+  |
+| -------- |  | HTTP |----> Code |---> Send |  |
+| webhook  |  | Node |    | Node |   | Mail |  |
+| schedule |  +------+    +------+   +------+  |
+| ai_agent |                                   |
+| postgres |  +------+    +------+             |
+| openai   |  | Set  |----> Merge|             |
++----------+--+------+----+------+-------------+
 ```
-
----
 
 ## Features
 
-| Feature | Description |
-|:--------|:------------|
-| Visual Workflow Viewer | Drawflow-based node editor for n8n workflow visualization |
-| 3815 Templates | Searchable library of community and official n8n templates |
-| Drawflow Node-Editor | Interactive drag-and-drop node editor with connections |
-| Tag Filter | Filter workflows by tags, categories and node types |
-| Full-Text Search | Search across workflow names, descriptions and node configs |
-| JSON Import/Export | Load and save n8n workflow JSON files directly |
+| Status | Feature |
+|:-------|:--------|
+| Done | Drawflow Node-Editor ComfyUI-Style |
+| Done | Template Browser with 3,815+ Templates |
+| Done | Tag Filter with Top 12 Tags |
+| Done | Full-Text Search by Name, Nodes, Tags |
+| Done | JSON Import/Export for n8n and Drawflow |
+| Done | Keyboard Shortcuts Ctrl+E/I/F |
 
----
+## VPS Infrastructure
 
-## Tech Stack
-
-| Technology | Purpose |
-|:-----------|:--------|
-| HTML5 | Semantic layout and Drawflow container |
-| CSS3 | DkZ Design System with orange-amber theme |
-| JavaScript ES6+ | Workflow parser and node renderer |
-| Drawflow | Visual node-editor library |
-| LocalStorage | Offline workflow persistence |
-
----
+```
+KVM8 (8 vCPU, 16 GB RAM)
++--------------------------------------------+
+| nginx :443  --> dkz-n8n :5678              |
+| dkz-ontherun :3040 (MCP Gateway)           |
+| dkz-postgres :5432 (PostgreSQL 16)         |
+| dkz-redis :6379 (AOF Persistence)          |
+| vLLM :8811 (8 Models, GPU Inference)       |
+| llama-swap :8080 (Model Router)            |
++--------------------------------------------+
+```
 
 ## Quick Start
 
 ```bash
 git clone https://github.com/D-VKITZ/n8n-viewer.git
-cd n8n-viewer
-# Open index.html in your browser
+open n8n-viewer/index.html
 ```
 
 ---
 
-<div align="center">
-
-**DEVKiTZ Ecosystem**
-
-[devkitz.eu](https://devkitz.eu) · [dkz.app](https://dkz.app) · [GitHub](https://github.com/D-VKITZ)
-
-Built with the DkZ Design System -- `--accent: #fa1e4e` · `--bg: #060608`
-
-</div>
+<p align="center">
+<sub>DEVKiTZ - Made with love by 777 - 2026</sub><br>
+<sub>devkitz.eu | dkz.app | github.com/D-VKITZ</sub>
+</p>
